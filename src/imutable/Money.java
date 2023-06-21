@@ -1,4 +1,6 @@
-package wdmc.imutable;
+package src.imutable;
+
+import src.utils.PocketCopier;
 
 import java.util.Currency;
 
@@ -13,8 +15,10 @@ public final class Money {
     public Money(double amount, Currency  currency, Pocket pocket) {
         this.amount = amount;
         this.currency = currency;
+
         //create a defensive copy of object non-immutable
-        this.pocket = new Pocket(pocket.name);
+        //this.pocket = new Pocket(pocket.name);
+        this.pocket = PocketCopier.copyOf(pocket);
     }
 
     public double getAmount() {
@@ -26,8 +30,10 @@ public final class Money {
     }
 
     public Pocket getPocket() {
+
         // return a pocket copy
-        return new Pocket(pocket.name);
+        //return new Pocket(pocket.name);
+        return PocketCopier.copyOf(pocket);
 
     }
 }

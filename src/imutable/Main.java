@@ -1,4 +1,4 @@
-package wdmc.imutable;
+package src.imutable;
 
 
 import java.util.Currency;
@@ -16,9 +16,9 @@ public class Main {
 
         Money montantTransaction = new Money(amount, currency,myPocket);
         system.out.println(
-                "Le montant de la transaction: " + montantTransaction.getAmount()+
-                " "+montantTransaction.getCurrency()+
-                " "+montantTransaction.getPocket().name
+            "Le montant de la transaction: " + montantTransaction.getAmount()+
+            " "+montantTransaction.getCurrency()+
+            " "+montantTransaction.getPocket().name
         );
 
         myPocket.name="updatePocket";
@@ -29,7 +29,9 @@ public class Main {
 
         // Displaying the transaction amount
         system.out.println(
-                "Le montant de la transaction: " + montantTransaction.getAmount()+" "+montantTransaction.getCurrency()+
-                        " "+montantTransaction.getPocket().name);
+            "Le montant de la transaction: " + montantTransaction.getAmount()+"" +
+            " "+montantTransaction.getCurrency()+
+            " "+montantTransaction.getPocket().name
+        );
     }
 }
